@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <title>Iguana Industries</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
@@ -9,35 +10,36 @@
 
 <body>
 
-    <div class="h-screen overflow-y-auto snap-y snap-mandatory">
+    <div class="h-screen scroll-smooth overflow-y-auto snap-y snap-mandatory">
 
-        <section>
+        <section class="bg-white border-b-2 border-b-text border-opacity-20">
+
+            <a id="0"></a>
 
             <!-- Navigation Bar -->
-            <nav >
-
+            <nav>
                 <div class="mx-auto max-w-7xl px-6">
-                    <div class="relative flex h-16 items-center justify-between">
+                    <div class="relative flex h-16 items-center justify-between border-b-2 border-b-text border-opacity-20">
                         <div class="flex flex-1 items-center justify-center">
 
                             <!-- Navbar Items Left -->
                             <div class="ml-6 mr-6">
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-text px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-100">Introduction</a>
-                                    <a href="#" class="text-text px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-100">Iguanas</a>
+                                    <a href="#0" class="text-text px-3 py-2 rounded-md font-medium hover:text-gray-900 hover:bg-gray-100">Introduction</a>
+                                    <a href="#1" class="text-text px-3 py-2 rounded-md font-medium hover:text-gray-900 hover:bg-gray-100">Iguanas</a>
                                 </div>
                             </div>
 
                             <!-- Logo -->
                             <div class="flex flex-shrink-0 items-center">
-                                <img class="hidden h-8 w-auto lg:block" src="../assets/logo.svg" alt="Iguana Corp">
+                                <img class="h-8 w-auto block" src="../assets/logo.svg" alt="Iguana Corp">
                             </div>
 
                             <!-- Navbar Items Right -->
                             <div class="ml-6">
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-text px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-100">Species</a>
-                                    <a href="#" class="text-text px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-100">Curiosities</a>
+                                    <a href="#" class="text-text px-3 py-2 rounded-md font-medium hover:text-gray-900 hover:bg-gray-100">Species</a>
+                                    <a href="#" class="text-text px-3 py-2 rounded-md font-medium hover:text-gray-900 hover:bg-gray-100">Curiosities</a>
                                 </div>
                             </div>
 
@@ -47,10 +49,109 @@
 
             </nav>
 
+            <!-- Content -->
+            <div class="mx-40 my-10 text-text">
+
+                <div class="flex items-center justify-center mb-4 h-[calc(100vh-6rem)]">
+
+                    <div class="w-1/3 p-4 mr-2">
+
+                        <img class="h-max w-auto pb-24" src="../assets/logo.svg" alt="Iguana Corp">
+
+                    </div>
+
+                    <!-- Left Content -->
+                    <div class="w-2/3 p-4 mr-2">
+
+                        <!-- Header -->
+                        <h1 class="text-3xl font-bold pb-2">Do you want to know about Iguanas ?</h1>
+
+                        <!-- Introduction Paragraph -->
+                        <p class="pb-4">
+                            This web page is the first assignment of the subject "Web Engineering" where we present
+                            Iguanas to the world. In this page you will see every sort of information about this beautiful animal, from its
+                            <strong>description</strong> to <strong>species</strong> to even some <strong>curiosities</strong>.
+                        </p>
+
+                        <!-- Start Adventure Button -->
+                        <div class="flex justify-center align-center">
+                            <a href="#1" class="px-6 py-3 text-white no-underline bg-green_secondary rounded-md hover:bg-green_primary hover:text-white">
+                                Start Adventure
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="bg-green-800">
-            <h1>Page 2</h1>
+        <section class="bg-white border-b-2 border-b-text border-opacity-20">
+
+            <a id="1"></a>
+
+
+            <div class="mx-40 my-10 text-text">
+
+                <div class="flex items-center justify-center mb-4 h-screen">
+
+                    <!-- Left Content -->
+                    <div class="w-2/3 p-4 mr-2">
+
+                        <h1 class="text-green_secondary text-3xl font-bold pb-4">What are Iguanas ?</h1>
+
+                        <p class="pb-2 border-b-2 border-opacity-70 border-b-green_secondary">
+                            Iguana is a genus of <span class="text-green_primary">herbivorous</span> lizards that are native to tropical areas of Mexico, Central
+                            America, South America, and the Caribbean. <span class="text-green_primary">Two species</span> are placed in the genus, the green iguana,
+                            which is widespread throughout its range and a popular pet, and the Lesser Antillean iguana, which
+                            is native to the Lesser Antilles. Genetic analysis indicates that the green iguana may comprise a
+                            complex of multiple species.
+                        </p>
+
+                        <p class="py-2 border-b-2 border-opacity-70 border-b-green_secondary">
+                            Iguanas are large lizards that can range from <span class="text-green_primary">1.2 to 2.0</span> meters in length.
+                            They possess a dewlap and a row of elongated scales running from the midline of
+                            their necks down to their tails.
+                            Iguanas have <span class="text-green_primary">keen vision</span> and can see shapes, shadows, colors and movement at long
+                            distances. They employ visual signals to <span class="text-green_primary">communicate</span> with other members of the same species.
+                        </p>
+
+                        <p class="py-2 border-b-2 border-opacity-70 border-b-green_secondary">
+                            Although, not recommended, iguanas <span class="text-green_primary">can be eaten</span>. They have historically featured in the
+                            culinary traditions of Mexico and Central America. Its mean is also consumed in parts of the
+                            United States and Puerto Rico, as well as its eggs.
+                        </p>
+
+                        <p class="py-2">
+
+                            Iguanas have developed an herbivorous lifestyle, foraging exclusively on vegetation and foliage.
+                            To acquire, process, and digest plant matter, herbivorous lizards must have a higher bite force
+                            relative to their size in comparison to carnivorous or omnivorous reptiles. The skull of the
+                            iguana has undergone modifications resulting in a strong bite force and efficient processing
+                            of vegetation, according to one study. To accomplish this biomechanically, herbivorous
+                            lizards have taller and wider skulls, shorter snouts, and larger bodies relative to carnivorous
+                            and omnivorous reptiles. Increasing the strength of the skull allows for increased muscle
+                            presence and increases the ability of the skull to withstand stronger forces.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="w-1/3 p-4 mr-2">
+
+                        <img class="h-max w-auto shadow-md rounded-lg" src="../assets/iguana.jpg" alt="Iguana Corp">
+                        <p class="pt-2 text-center">A male green Iguana.</p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </section>
 
         <section>
