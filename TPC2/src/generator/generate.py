@@ -110,12 +110,15 @@ def generate() -> None:
 
         if city['id'] in city_connections:
             for connection in city_connections[city['id']]:
-
                 city_id, distance = connection
-                city_template_string += f"<a href='#' class='grid-item'>{id_cities[city_id]['nome']} ({math.floor(distance)}km)</a>"
+                city_template_string += f"<a href='{city_id}' class='grid-item'>{id_cities[city_id]['nome']} ({math.floor(distance)}km)</a>"
 
         city_template_string += """
                             </div>
+                            
+                            <h3>
+                                <a href="/" style="text-decoration: none; color: maroon">Back to Cities</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
