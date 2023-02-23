@@ -1,0 +1,60 @@
+html, body {
+    position: relative;
+    scroll-behavior: smooth;
+    margin: 0px;
+}
+
+
+body {
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    letter-spacing: 0.03rem;
+    font-weight: lighter;
+    background-color: burlywood;
+}
+
+h3 {
+    text-align: center;
+    background-color: antiquewhite;
+    color: #404040;
+    margin: 0px;
+    padding: 10px 0;
+}
+
+.centered {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.list {
+    height: calc(100vh - 40px);
+    width: 400px;
+    overflow: auto;
+    background-color: aliceblue;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 5px;
+}
+
+.grid-item {
+    font-weight: normal;
+    color: #404040;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.grid-item:hover {
+    background-color: #ebebeb;
+}
+
