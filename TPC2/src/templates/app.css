@@ -22,7 +22,7 @@ h3 {
 
 .centered {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -58,3 +58,49 @@ h3 {
     background-color: #ebebeb;
 }
 
+.details {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    width: 600px;
+    max-height: 640px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.desc {
+    font-weight: normal;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.text {
+    text-align: center;
+    color: #404040;
+    font-weight: normal;
+    float:left;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.grid-con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.grid-con .grid-item {
+    font-weight: normal;
+    color: #404040;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px
+}
+
+.connections {
+    width: 600px;
+    background-color: aliceblue;
+    padding-top: 20px;
+}
