@@ -42,6 +42,12 @@ def generate() -> None:
 
         district_cities[d].append(city)
 
+    # Sorting data.
+    for district in district_cities:
+        district_cities[district] = list(sorted(district_cities[district], key=lambda x: x['nome']))
+
+    district_cities = dict(sorted(district_cities.items()))
+
     # Build index.html page.
     for district in district_cities:
 
