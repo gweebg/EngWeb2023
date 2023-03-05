@@ -32,7 +32,7 @@ exports.servePerson = (person) => {
             </p>
     
             <p class="text">
-                <strong>Gender: </strong> ${person.sexo}
+                <strong>Gender: </strong> ${titleCase(person.sexo)}
             </p>
     
             <p class="text">
@@ -44,11 +44,11 @@ exports.servePerson = (person) => {
             </p>
     
             <p class="text">
-                <strong>Political Party: </strong> ${person.partido_politico.party_name} (${person.partido_politico.abbr})
+                <strong>Political Party: </strong> ${person.partido_politico.party_name} ${person.partido_politico.abbr ? (person.partido_politico.abbr) : "" }
             </p>
     
             <p class="text">
-                <strong>Religion: </strong> ${person.religiao}
+                <strong>Religion: </strong> ${person.religiao ? person.religiao : "Not Specified" }
             </p>
     
             <p class="text">
@@ -80,7 +80,8 @@ exports.servePerson = (person) => {
 
 
     for (let attr in person.atributos) {
-        if (person.atributos[attr]) template += `<p class="grid-item">${titleCase(attr.replace('_', ' '))}</p>`;
+        let underscores = RegExp('_', "g")
+        if (person.atributos[attr]) template += `<p class="grid-item">${titleCase(attr.replace(underscores, ' '))}</p>`;
     }
 
     template += `

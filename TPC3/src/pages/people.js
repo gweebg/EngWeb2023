@@ -1,5 +1,5 @@
 
-exports.servePeople = (personList) => {
+exports.servePeople = (personList, title) => {
 
     let template = `
         <!DOCTYPE html>
@@ -36,6 +36,8 @@ exports.servePeople = (personList) => {
                 <div class="centered">
         
                     <div class="list">
+        
+                        <h3>${title}</h3>
         
                         <input type="text" id="input" onkeyup="filterAndDisplay()" placeholder="Pesquisar pessoas pelo nome..">
         
