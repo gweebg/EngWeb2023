@@ -143,3 +143,7 @@ th > a {
     text-decoration: none;
     color: #404040;
 }
+
+#menu {
+    margin: 5px 0;
+}

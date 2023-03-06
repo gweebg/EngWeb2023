@@ -36,9 +36,9 @@ exports.serverGenders = (maleCount, femaleCount, otherCount) => {
                     </tr>
     
                     <tr>
-                        <th>${maleCount} (${maleCount / total}%)</th>
-                        <th>${femaleCount} (${femaleCount / total}%)</th>
-                        <th>${otherCount} (${otherCount / total}%)</th>
+                        <th>${maleCount} (${Math.round(maleCount / total * 100)}%)</th>
+                        <th>${femaleCount} (${Math.round(femaleCount / total * 100)}%)</th>
+                        <th>${otherCount} (${Math.round(otherCount / total * 100)}%)</th>
                     </tr>
     
                 </table>

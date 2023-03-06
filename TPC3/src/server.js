@@ -6,6 +6,7 @@ const fs = require("fs");
 const people = require('./pages/people')
 const person = require('./pages/person')
 const genders = require('./pages/genders')
+const index = require("./pages");
 
 
 const server = http.createServer(async function (req, res) {
@@ -19,14 +20,20 @@ const server = http.createServer(async function (req, res) {
 
     const decomposedUrl = url.parse(fullUrl, true);
 
-    let males, females, others;
-
     console.log("request " + date + " > " + method + " " + fullUrl);
 
     if (method === "GET") {
 
+
+        if (decomposedUrl.pathname === "/") {
+
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            res.end(index.serveIndex());
+
+        }
+
         /* GET /people */
-        if (decomposedUrl.pathname === "/people") {
+        else if (decomposedUrl.pathname === "/people") {
 
             axios.get("http://localhost:3000/pessoas?_sort=nome")
                 .then((resp) => {
@@ -65,7 +72,7 @@ const server = http.createServer(async function (req, res) {
         /* GET styles.css */
         else if (styles.test(decomposedUrl.pathname)) {
 
-            fs.readFile('pages/styles.css', (err, css) => {
+            fs.readFile('src/pages/styles.css', (err, css) => {
 
                 if (err) {
                     res.writeHead(500);
@@ -81,9 +88,9 @@ const server = http.createServer(async function (req, res) {
         /* GET /people/genders */
         else if (decomposedUrl.pathname === "/people/genders") {
 
-            males = await axios.get("http://localhost:3000/pessoas?sexo=masculino").then(response => response.data);
-            females = await axios.get("http://localhost:3000/pessoas?sexo=feminino").then(response => response.data);
-            others = await axios.get("http://localhost:3000/pessoas?sexo=outro").then(response => response.data);
+            var males = await axios.get("http://localhost:3000/pessoas?sexo=masculino").then(response => response.data);
+            var females = await axios.get("http://localhost:3000/pessoas?sexo=feminino").then(response => response.data);
+            var others = await axios.get("http://localhost:3000/pessoas?sexo=outro").then(response => response.data);
 
             res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             res.end(genders.serverGenders(males.length, females.length, others.length));
@@ -91,8 +98,9 @@ const server = http.createServer(async function (req, res) {
 
         else if (decomposedUrl.pathname === "/people/males") {
 
-            if (! males)
-                males = await axios.get("http://localhost:3000/pessoas?sexo=masculino").then(response => response.data);
+            console.log(males === undefined);
+
+            males = await axios.get("http://localhost:3000/pessoas?sexo=masculino&_sort=nome").then(response => response.data);
 
             res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             res.end(people.servePeople(males, 'Males'));
@@ -101,8 +109,7 @@ const server = http.createServer(async function (req, res) {
 
         else if (decomposedUrl.pathname === "/people/females") {
 
-            if (! females)
-                females = await axios.get("http://localhost:3000/pessoas?sexo=feminino").then(response => response.data);
+            females = await axios.get("http://localhost:3000/pessoas?sexo=feminino&_sort=nome").then(response => response.data);
 
             res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             res.end(people.servePeople(females, 'Females'));
@@ -110,8 +117,7 @@ const server = http.createServer(async function (req, res) {
 
         else if (decomposedUrl.pathname === "/people/others") {
 
-            if (! others)
-                others = await axios.get("http://localhost:3000/pessoas?sexo=outro").then(response => response.data);
+            others = await axios.get("http://localhost:3000/pessoas?sexo=outro&_sort=nome").then(response => response.data);
 
             res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
             res.end(people.servePeople(others, "Others"));
