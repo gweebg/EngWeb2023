@@ -1,7 +1,7 @@
 
-exports.serverGenders = (maleCount, femaleCount, otherCount) => {
+exports.serveGenders = (maleCount, femaleCount, otherCount) => {
 
-    let total =maleCount + femaleCount + otherCount;
+    let total = maleCount + femaleCount + otherCount;
 
     return `
     <!DOCTYPE html>
