@@ -7,7 +7,6 @@
       "password_hash": "random_password_hash"
     }
   ],
-
   "tasks": [
     {
       "id": 0,
@@ -17,6 +16,15 @@
       "timestamp": "2012-04-23T18:25:43.511Z",
       "who": "The person who should do it.",
       "status": 1
+    },
+    {
+      "name": "asdasd",
+      "description": "asdasd",
+      "due_date": "111111-12-11T11:11",
+      "who": "qweq",
+      "status": 0,
+      "timestamp": "2023-03-14T18:37:32.980Z",
+      "id": 1
     }
   ]
 }

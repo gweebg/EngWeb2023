@@ -146,6 +146,11 @@ input.mid {
 }
 
 
+.context-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

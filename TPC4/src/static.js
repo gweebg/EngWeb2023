@@ -1,7 +1,22 @@
 const fs = require('fs');
+const path = require("path");
+
+
+const MIME_TYPES = {
+    html: 'text/html; charset=UTF-8',
+    css: 'text/css',
+    png: 'image/png',
+    ico: 'image/x-icon',
+    svg: 'image/svg+xml',
+};
+
 
 function isStaticResource(request) {
-    return /\/favicon.ico$/.test(request.url);
+
+    if (request.url === "/") return false;
+    let path = `./shared${request.url}`;
+
+    return fs.existsSync(path);
 }
 
 function serveStaticResource(req, res) {
@@ -11,23 +26,21 @@ function serveStaticResource(req, res) {
 
     fs.readFile(`shared/${file}`, (error, data) => {
 
-        if (error) {
+            if (error) {
 
-            console.log(`fs.error> ${error}`);
-            res.statusCode = 404;
-            res.end("<p>File ${file} not found</p>");
+                console.log(`fs.error> ${error}`);
+                res.statusCode = 404;
+                res.end(`<p>File ${file} not found</p>`);
 
-        }
+            }
 
-        else {
+            else {
+                /* Add extensions/files to public. */
+                res.setHeader('Content-Type', MIME_TYPES[path.extname(file).substring(1)]);
+                res.end(data);
+            }
 
-            /* Add extensions/files to public. */
-            if (file === 'favicon.ico') res.setHeader('Content-Type', 'image/x-icon');
-            res.end(data);
-
-        }
-
-    });
+        });
 }
 
 exports.isStatic = isStaticResource;
