@@ -14,6 +14,15 @@ const getTasks = () => {
 
 };
 
+
+const getTask = async (taskId) => {
+
+    return axios.get(`${baseFetchUrl}/tasks/${taskId}`)
+        .then(response => {return response.data})
+        .catch(error => {return error});
+
+}
+
 const deleteTask = (taskId) => {
 
     return axios.delete(`${baseFetchUrl}/tasks/${taskId}`)
@@ -26,16 +35,19 @@ const deleteTask = (taskId) => {
 
 }
 
-const updateTask = (taskObject) => {
+const updateTask = (taskObject, taskId) => {
 
-    return axios.put(`${baseFetchUrl}/tasks/${taskObject.id}`, taskObject)
+    return getTask(taskId)
         .then(response => {
-            return response.data;
-        })
-        .catch((error => {
-            return error;
-        }));
 
+            taskObject["status"] = response.status;
+            taskObject["timestamp"] = new Date().toISOString();
+
+            return axios.put(`${baseFetchUrl}/tasks/${taskId}`, taskObject)
+                .then(response => {return response.data})
+                .catch((error => {return error}));
+        })
+        .catch(error => {return error});
 }
 
 const completeTask = (taskId) => {

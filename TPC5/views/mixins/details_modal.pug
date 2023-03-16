@@ -6,5 +6,19 @@ mixin editModal(taskData)
 
             span.close(style="float: right") &times;
 
-            h2 Edit Task '#{taskData.name}'
-            p Fill out the form to edit any parameter of the task!
+            h2 Edit task:
+            p In this window you can edit any type o parameters for your task!
+
+            form(method="post" action="/tasks/edit/" + taskData.id)
+
+                input(type="text" name="name" placeholder="Task Name" value=taskData.name)
+                br
+
+                textarea(name="description" rows="4" cols="50" placeholder="Task Description")
+                    | #{taskData.description}
+
+                input(type="datetime-local" name="due_date" placeholder="Due Date" value=taskData.due_date)
+
+                input.mid(type="text" name="who" placeholder="Responsible Person" value=taskData.who)
+
+                button.submit-button Edit Task

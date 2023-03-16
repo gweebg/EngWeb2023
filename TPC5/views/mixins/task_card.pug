@@ -4,23 +4,40 @@ mixin taskCard(taskData, state)
 
     div.list-item
 
-        p= taskData.name
+        div.info
 
-        div.context-buttons
+            p= taskData.name
 
-            if state
+            - const date = new Date(taskData.due_date);
+            - const formattedDate = `${date.getDate()} ${date.toLocaleString('default', { month: 'long' }).substring(0, 3)} ${date.getFullYear()}`;
+            p= formattedDate
 
-                button#edit
-                    img(src="/images/edit.svg" alt="edit-button" width="35" height="35" class="context-icon")
+            div.context-buttons
 
-                a(href="/tasks/complete/" + taskData.id)
-                    button#set-done
-                        img(src="/images/done.svg" alt="delete-button" width="35" height="35" class="context-icon")
+                if state
 
-            else
+                    button#edit
+                        img(src="/images/edit.svg" alt="edit-button" width="35" height="35" class="context-icon")
 
-                a(href="/tasks/delete/" + taskData.id)
-                    button#delete
-                        img(src="/images/delete.svg" alt="delete-button" width="35" height="35" class="context-icon")
+                    a(href="/tasks/complete/" + taskData.id)
+                        button
+                            img(src="/images/done.svg" alt="delete-button" width="35" height="35" class="context-icon")
+
+                else
+
+                    a(href="/tasks/delete/" + taskData.id)
+                        button
+                            img(src="/images/delete.svg" alt="delete-button" width="35" height="35" class="context-icon")
+
+
+        div.desc
+            p= taskData.description
+
+        div.time
+
+            - const timestamp = new Date(taskData.timestamp);
+            - const formattedStamp = `${timestamp.getDate()} ${timestamp.toLocaleString('default', {month: 'long'}).substring(0, 3)} ${timestamp.getFullYear()}`;
+            p= formattedStamp
+
 
         +editModal(taskData)

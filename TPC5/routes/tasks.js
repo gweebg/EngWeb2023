@@ -38,4 +38,12 @@ router.get("/delete/:taskId", function (req, res) {
 
 });
 
+router.post("/edit/:taskId", function (req, res) {
+
+   Tasks.updateTask(req.body, req.params.taskId)
+       .then(_ => res.redirect("/tasks"))
+       .catch(error => res.render('error', {error: error, message: "Could not update the task."}));
+
+});
+
 module.exports = router;
