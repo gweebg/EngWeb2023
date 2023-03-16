@@ -1,0 +1,10 @@
+mixin editModal(taskData)
+
+    div#details-modal.modal
+
+        div.modal-content
+
+            span.close(style="float: right") &times;
+
+            h2 Edit Task '#{taskData.name}'
+            p Fill out the form to edit any parameter of the task!

@@ -15,34 +15,25 @@
       "description": "This is the task that defines this json structure.",
       "timestamp": "2012-04-23T18:25:43.511Z",
       "who": "The person who should do it.",
-      "status": 1
+      "status": 0
     },
     {
       "name": "asd",
       "description": "asd",
-      "due_date": "2023-03-15T12:40",
+      "due_date": "2023-03-16T13:01",
       "who": "asd",
       "status": 0,
-      "timestamp": "2023-03-15T12:40:28.907Z",
+      "timestamp": "2023-03-16T13:01:23.446Z",
       "id": 1
     },
     {
-      "name": "Terminar TPC5 Engenharia Web ",
-      "description": "Criar form de edição e meter checkbox!",
-      "due_date": "2023-03-16T11:50",
-      "who": "Guilherme",
+      "name": "asd",
+      "description": "asd",
+      "due_date": "2023-03-16T13:01",
+      "who": "asd",
       "status": 1,
-      "timestamp": "2023-03-16T11:50:25.934Z",
+      "timestamp": "2023-03-16T13:01:51.188Z",
       "id": 2
-    },
-    {
-      "name": "a",
-      "description": "a",
-      "due_date": "2023-03-16T11:51",
-      "who": "eu",
-      "status": 1,
-      "timestamp": "2023-03-16T11:52:00.463Z",
-      "id": 3
     }
   ]
 }

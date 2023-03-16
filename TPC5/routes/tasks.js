@@ -22,4 +22,20 @@ router.post("/new", function (req, res) {
 
 });
 
+router.get("/complete/:taskId", function (req, res) {
+
+   Tasks.completeTask(req.params.taskId)
+       .then(_ => res.redirect("/tasks"))
+       .catch(error => res.render('error', {error: error, message: "Something went wrong completing the task."}));
+
+});
+
+router.get("/delete/:taskId", function (req, res) {
+
+   Tasks.deleteTask(req.params.taskId)
+       .then(_ => res.redirect("/tasks"))
+       .catch(error => res.render('error', {error: error, message: "Could not delete the task."}));
+
+});
+
 module.exports = router;
