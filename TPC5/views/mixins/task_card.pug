@@ -1,0 +1,20 @@
+mixin taskCard(taskData, state)
+
+    div.list-item
+
+        p= taskData.name
+
+        div.context-buttons
+
+            if state
+
+                button#edit
+                    img(src="/images/edit.svg" alt="edit-button" width="35" height="35" class="context-icon")
+
+                button#set-done
+                    img(src="/images/done.svg" alt="delete-button" width="35" height="35" class="context-icon")
+
+            else
+
+                button#delete
+                    img(src="/images/delete.svg" alt="delete-button" width="35" height="35" class="context-icon")

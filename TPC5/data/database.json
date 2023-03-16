@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Base Model",
+      "email": "basemodel@gmail.com",
+      "password_hash": "random_password_hash"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 0,
+      "due_date": "2012-04-23T18:25:43.511Z",
+      "name": "Base Model Task",
+      "description": "This is the task that defines this json structure.",
+      "timestamp": "2012-04-23T18:25:43.511Z",
+      "who": "The person who should do it.",
+      "status": 1
+    },
+    {
+      "name": "asd",
+      "description": "asd",
+      "due_date": "2023-03-15T12:40",
+      "who": "asd",
+      "status": 0,
+      "timestamp": "2023-03-15T12:40:28.907Z",
+      "id": 1
+    },
+    {
+      "name": "Terminar TPC5 Engenharia Web ",
+      "description": "Criar form de edição e meter checkbox!",
+      "due_date": "2023-03-16T11:50",
+      "who": "Guilherme",
+      "status": 1,
+      "timestamp": "2023-03-16T11:50:25.934Z",
+      "id": 2
+    },
+    {
+      "name": "a",
+      "description": "a",
+      "due_date": "2023-03-16T11:51",
+      "who": "eu",
+      "status": 1,
+      "timestamp": "2023-03-16T11:52:00.463Z",
+      "id": 3
+    }
+  ]
+}

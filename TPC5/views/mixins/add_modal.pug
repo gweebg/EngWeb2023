@@ -1,0 +1,51 @@
+mixin addModal()
+
+    div#add-modal.modal
+
+        div.modal-content
+
+            span.close(style="float: right") &times;
+
+            h2 Add a new task:
+            p Fill in the form to add a new task!
+
+            form#add-form(method="post" action="/tasks/new")
+
+                input#task-name(type="text" name="name" placeholder="Task Name")
+                br
+
+                textarea#desc(name="description" rows="4" cols="50" placeholder="Task Description")
+
+                input(type="datetime-local" name="due_date" placeholder="Due Date")
+
+                input.mid(type="text" name="who" placeholder="Responsible Person")
+
+                button#submit-button.submit-button Add New Task
+
+    script.
+
+        /* Getting the full modal. */
+        let modal = document.getElementById("add-modal");
+
+        /* Getting the add new button. */
+        let btn = document.getElementById("add-new");
+
+        /* Getting the close button of the modal. */
+        let span = document.getElementsByClassName("close")[0];
+
+        /* Open modal on click. */
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        /* Close the modal upon clicking the 'x' button. */
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        /* Close the modal upon clicking anywhere outside. */
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }

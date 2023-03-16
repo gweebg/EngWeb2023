@@ -1,0 +1,39 @@
+extends layout
+
+include mixins/task_card
+include mixins/add_modal
+
+block content
+
+    div.task-list
+
+        div.section
+
+            div.list-header
+
+                div.header-text
+                    h2 Tasks To Complete
+                    p You can add more tasks with the plus button!
+
+                button#add-new(type="button")
+                    img(src="/images/add.svg" alt="add-button" width="35" height="35" class="context-icon")
+
+            div.list
+
+                each task in todoTasks
+                    +taskCard(task, task.status)
+
+        div.section
+
+            div.list-header
+
+                div.header-text
+                    h2 Completed Tasks
+                    p Here you can find every completed task!
+
+            div.list
+
+                each task in doneTasks
+                    +taskCard(task, task.status)
+
+        +addModal()
