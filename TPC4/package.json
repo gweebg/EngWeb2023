@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "../TPC5/node_modules/.bin/nodemon -e js,html,css,json src/server.js",
+    "dev": "nodemon -e js,html,css,json src/server.js",
     "json": "json-server --watch data/database.json"
   },
   "keywords": [

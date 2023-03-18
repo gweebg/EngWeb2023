@@ -23,7 +23,7 @@ function renderTasks(taskList) {
             </head>
 
         <body>
-    
+     
             <div class="navbar">
                 Navbar
             </div>
