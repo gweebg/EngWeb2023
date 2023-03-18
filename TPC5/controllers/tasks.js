@@ -62,6 +62,18 @@ const completeTask = (taskId) => {
 
 }
 
+const uncompleteTask = (taskId) => {
+
+    return axios.patch(`${baseFetchUrl}/tasks/${taskId}`, {status: 1})
+        .then(response => {
+            return response.data;
+        })
+        .catch((error => {
+            return error;
+        }));
+
+}
+
 const addTask = (taskObject) => {
 
     taskObject["status"] = 1;
@@ -96,6 +108,7 @@ const filterByStatusTasks = (tasks) => {
 
 module.exports.addTask = addTask;
 module.exports.completeTask = completeTask;
+module.exports.uncompleteTask = uncompleteTask;
 module.exports.updateTask = updateTask;
 module.exports.deleteTask = deleteTask;
 module.exports.getTasks = getTasks;

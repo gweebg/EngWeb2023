@@ -30,6 +30,14 @@ router.get("/complete/:taskId", function (req, res) {
 
 });
 
+router.get("/reset/:taskId", function (req, res) {
+
+    Tasks.uncompleteTask(req.params.taskId)
+        .then(_ => res.redirect("/tasks"))
+        .catch(error => res.render('error', {error: error, message: "Something went wrong un-completing the task."}));
+
+});
+
 router.get("/delete/:taskId", function (req, res) {
 
    Tasks.deleteTask(req.params.taskId)

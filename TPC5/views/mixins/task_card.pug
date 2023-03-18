@@ -2,42 +2,46 @@ include details_modal
 
 mixin taskCard(taskData, state)
 
+    - const dueDate = new Date(taskData.due_date);
+    - const dueDateMonthName = dueDate.toLocaleString('default', {month: 'short'});
+    - const fDueDate = `${dueDate.getDate()} ${dueDateMonthName} ${dueDate.getFullYear()}`;
+
     div.list-item
 
         div.info
 
-            p= taskData.name
-
-            - const date = new Date(taskData.due_date);
-            - const formattedDate = `${date.getDate()} ${date.toLocaleString('default', { month: 'long' }).substring(0, 3)} ${date.getFullYear()}`;
-            p= formattedDate
+            p #{taskData.name}
 
             div.context-buttons
 
-                if state
+                button.edit(href="#" + taskData.id)
+                    img(src="/images/edit.svg" alt="edit-button" width="35" height="35" class="context-icon")
 
-                    button#edit
-                        img(src="/images/edit.svg" alt="edit-button" width="35" height="35" class="context-icon")
+                a(href="/tasks/delete/" + taskData.id)
+                    button
+                        img(src="/images/delete.svg" alt="delete-button" width="35" height="35" class="context-icon")
+
+                if state
 
                     a(href="/tasks/complete/" + taskData.id)
                         button
-                            img(src="/images/done.svg" alt="delete-button" width="35" height="35" class="context-icon")
+                            img(src="/images/done.svg" alt="done-button" width="35" height="35" class="context-icon")
 
                 else
 
-                    a(href="/tasks/delete/" + taskData.id)
+                    a(href="/tasks/reset/" + taskData.id)
                         button
-                            img(src="/images/delete.svg" alt="delete-button" width="35" height="35" class="context-icon")
-
+                            img(src="/images/undo.svg" alt="undone-button" width="35" height="35" class="context-icon")
 
         div.desc
-            p= taskData.description
+
+            if taskData.description === ""
+                p.empty (No Description Available)
+
+            else
+                p #{taskData.description}
 
         div.time
-
-            - const timestamp = new Date(taskData.timestamp);
-            - const formattedStamp = `${timestamp.getDate()} ${timestamp.toLocaleString('default', {month: 'long'}).substring(0, 3)} ${timestamp.getFullYear()}`;
-            p= formattedStamp
-
+            p Due to #{fDueDate}, #{taskData.who}
 
         +editModal(taskData)
