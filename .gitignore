@@ -2,3 +2,4 @@
 node_modules
 TPC2/src/generated/cities
 .idea
+package-lock.json
