@@ -7,7 +7,7 @@ const addressSchema = mongoose.Schema({
 });
 
 const ppartySchema = mongoose.Schema({
-    party_aabr: String,
+    party_abbr: String,
     party_name: String
 });
 
