@@ -4,7 +4,7 @@
       "id": "6416251701785894fdc87d8b",
       "name": "mollit nisi",
       "who": "et",
-      "status": 0,
+      "status": 1,
       "description": "Veniam duis Lorem nostrud ea culpa commodo ad duis laboris Lorem.",
       "timestamp": "2021-11-16T21:43:44.424Z",
       "due_date": "2021-11-17T21:43:44.424Z"
@@ -31,7 +31,7 @@
       "id": "64162517f898b0744c1b7577",
       "name": "qui in",
       "who": "duis",
-      "status": 1,
+      "status": 0,
       "description": "Esse eiusmod proident enim non incididunt est mollit excepteur amet.",
       "timestamp": "1993-12-19T00:33:13.886Z",
       "due_date": "1993-12-20T00:33:13.886Z"
