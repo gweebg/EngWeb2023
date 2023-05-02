@@ -21,7 +21,7 @@ router.get('/:id', function(req, res, next) {
 
   get(`http://localhost:3001/api/emd/${req.body.id}`)
       .then(response => {
-        return res.render('athlete', { athlete: response })
+        return res.render('athlete', { athlete: response.data })
       })
       .catch(error => {
         return error

@@ -19,8 +19,7 @@ block content
           tr
 
             td
-              a(href=`/${exam._id}`)
-              exam.nome
+              a(href=`/${exam._id}`)= exam.nome
             td= exam.género
             td= exam.idade
             td= exam.dataEMD
